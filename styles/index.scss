@@ -1,0 +1,20 @@
+@import "./color";
+@import "./fonts";
+@import "./mixin";
+@import "footer";
+@import "header";
+@import "intro";
+@import "authors-books";
+@import "about-author";
+@import "partners";
+@import "book-copy";
+@import "learn";
+@import "improvement";
+@import "review";
+@import "articles";
+@import "swiper";
+@import "subscribe";
+
+* {
+  box-sizing: border-box;
+}

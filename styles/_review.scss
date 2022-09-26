@@ -1,0 +1,160 @@
+@import "./color";
+@import "./fonts";
+@import "./mixin";
+
+
+.review {
+  &__wrapper {
+    max-width: 1300px;
+    min-height: 604px;
+    margin: 128px auto 0 auto;
+    flex-wrap: wrap;
+    @include display-centering-y(center);
+  }
+
+  &__left {
+    max-width: 442px;
+    min-height: 445px;
+    margin-top: 19px;
+    margin-right: 36px;
+    box-sizing: border-box;
+    padding-bottom: 24px;
+    @media screen and (max-width: 600px) {
+      margin: 20px;
+    }
+  }
+
+  &__header {
+    margin-bottom: 34px;
+
+    .title {
+      font: 42px Cardo;
+      line-height: 50px;
+      margin: 3px 0 24px 0;
+      text-transform: capitalize;
+      text-align: start;
+      color: $biscay;
+      @media screen and (max-width: 680px) {
+        font: 36px Cardo;
+      }
+
+      &__line {
+        @include size(50px, 3px);
+        background-color: $bright-sun;
+      }
+    }
+  }
+
+  &__text {
+    font: 19px Inter;
+    line-height: 34px;
+    color: $manatee;
+    margin: 0 0 23px 0;
+  }
+
+  .ratings {
+    @include display-centering-y(center);
+
+    margin-bottom: 10px;
+
+    &__img {
+      max-width: 120px;
+      height: 20px;
+    }
+
+    &__number {
+      font: 22px Cardo;
+      line-height: 26px;
+      color: $biscay;
+      margin: 0 0 0 11px;
+    }
+
+  }
+
+  &__info {
+    font: 18px Inter;
+    line-height: 28px;
+    color: $biscay;
+    margin: 0;
+  }
+
+  &__right {
+    display: flex;
+    height: 625px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-right: 19px;
+    justify-content: center;
+    width: 100%;
+    max-width: 803px;
+    @media screen and (max-width: 840px) {
+      height: 100%;
+      align-items: center;
+    }
+    @media screen and (max-width: 500px) {
+      padding-right: 0;
+    }
+  }
+
+  .card {
+    background-color: $biscay;
+    box-sizing: border-box;
+    padding: 30px 48px 24px 35px;
+    max-width: 381px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    min-height: 292px;
+    @media screen and (max-width: 500px) {
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+
+    &:first-child {
+      padding: 30px 51px 24px 35px;
+    }
+
+    &__author {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      margin-left: 20px;
+    }
+
+    &__name {
+      font: 24px Cardo;
+      line-height: 29px;
+      color: $white;
+      margin: 0 0 13px 0;
+    }
+
+    &__ratings {
+      width: 76px;
+      height: 13px;
+    }
+
+    &__img {
+      width: 85px;
+      height: 85px;
+
+      & img {
+        width: 100%;
+      }
+    }
+
+    &__quote {
+      color: $white;
+      font: 22px Cardo;
+      line-height: 33px;
+    }
+
+    &__text {
+      font: 18px Inter;
+      line-height: 29px;
+      color: $spindle;
+      margin: 13px 0 0 0;
+    }
+  }
+}

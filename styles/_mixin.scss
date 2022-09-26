@@ -1,0 +1,38 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype');
+  }
+}
+
+@mixin display-centering-xy($align-items,$justify-content) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin display-centering-x($justify-content) {
+  display: flex;
+  justify-content: $justify-content;
+}
+
+@mixin display-centering-y($align-items) {
+  display: flex;
+  align-items: $align-items;
+}
+
+@mixin size($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin button($width,$height,$background:none, $border: none, $cursor: pointer) {
+  width: $width;
+  height: $height;
+  background: $background;
+  border: $border;
+  cursor: $cursor;
+}

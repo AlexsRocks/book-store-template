@@ -1,0 +1,200 @@
+@import "./color";
+@import "./fonts";
+@import "./mixin";
+
+.footer {
+  background: #1B3764;
+
+  &__wrapper {
+    max-width: 1300px;
+    min-height: 486px;
+    margin: 0 auto;
+    padding-top: 92px;
+  }
+
+  .nav {
+    @include display-centering-x(space-between);
+    margin-bottom: 79px;
+    flex-wrap: wrap;
+    @media screen and (max-width: 1300px) {
+      justify-content: center;
+      flex-direction: column;
+      margin-left: 20px;
+    }
+
+    &__column {
+    }
+
+    & .logo {
+      max-width: 250px;
+      width: 100%;
+      min-height: 258px;
+      margin-right: 81px;
+    }
+
+    & .explore {
+      max-width: 200px;
+      width: 100%;
+      min-height: 258px;
+      margin-right: 32px;
+    }
+
+    & .utility-pages {
+      max-width: 300px;
+      width: 100%;
+      min-height: 258px;
+    }
+
+    & .keep-in-touch {
+      max-width: 415px;
+      width: 100%;
+      min-height: 258px;
+    }
+
+    &__logo {
+      max-width: 119px;
+      height: 35px;
+      object-fit: cover;
+      margin-bottom: 20px;
+
+    }
+
+    &__socials {
+      @include display-centering-xy(center, space-between);
+
+      .social__button {
+        background: none;
+        @include button(55px, 55px, none, 1px solid $bright-sun);
+        text-decoration: none;
+        margin-right: 10px;
+        @include display-centering-xy(center, center);
+      }
+    }
+
+    &__title {
+      font: 24px Cardo;
+      color: $white;
+      line-height: 34px;
+      margin: 0 0 24px 0;
+      letter-spacing: 0.384px;
+    }
+
+    &__list {
+      list-style: none;
+      padding-left: 12px;
+    }
+
+    &__link {
+      position: relative;
+      text-decoration: none;
+      color: $spindle;
+      padding-left: 27px;
+      font: 18px Inter;
+      line-height: 31px;
+      letter-spacing: 0.18px;
+      margin-bottom: 20px;
+    }
+
+    &__item {
+      margin-bottom: 9px;
+
+      .dots,
+      .dots::before,
+      .dots::after {
+        content: "";
+        position: absolute;
+        box-sizing: content-box;
+        width: 2px;
+        height: 2px;
+        top: 9px;
+        left: 5px;
+        background: $bright-sun;
+        border: 1px solid $bright-sun;
+        border-radius: 50%;
+      }
+
+      .dots::before {
+        left: -8px;
+        top: -1px;
+      }
+
+      .dots::after {
+        top: -1px;
+        left: 6px;
+      }
+    }
+
+    & .contact {
+      &__list {
+        list-style: none;
+        padding: 0;
+      }
+
+      &__item {
+        display: flex;
+        margin-bottom: 28px;
+      }
+
+      &__title {
+        font: 18px Cardo;
+        line-height: 27px;
+        letter-spacing: 0.36px;
+        color: $white;
+        margin: 0;
+        max-width: 109px;
+        width: 100%;
+      }
+
+      &__list {
+        margin-top: 27px;
+      }
+
+      &__mail {
+        text-decoration: none;
+        font: 17px Inter;
+        line-height: 27px;
+        color: $spindle;
+        letter-spacing: 0.18px;
+      }
+
+      &__tel {
+        text-decoration: none;
+        font: 17px Inter;
+        line-height: 27px;
+        color: $spindle;
+        letter-spacing: 0.18px;
+      }
+
+      &__link {
+        text-decoration: none;
+        color: $spindle;
+        font: 17px Inter;
+        line-height: 27px;
+        max-width: 225px;
+      }
+    }
+
+  }
+
+  & .copyrights {
+    text-align: center;
+    padding-left: 2px;
+
+    &__info {
+      font: 17px Inter;
+      line-height: 26px;
+      color: $spindle;
+      text-align: center;
+      letter-spacing: 0.17px;
+    }
+
+    &__link {
+      font: 17px Inter;
+      line-height: 26px;
+      color: $white;
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: 0.17px;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@import "./color";
+@import "./fonts";
+@import "./mixin";
+
+// Partners
+.partners {
+  &__wrapper {
+    max-width: 1300px;
+    margin: 126px auto 108px auto;
+  }
+
+  &__header {
+    margin-bottom: 50px;
+
+    .title {
+      font: 42px Cardo;
+      margin: 0 0 24px 0;
+      text-align: center;
+      line-height: 50px;
+      text-transform: capitalize;
+      color: $biscay;
+
+      &__line {
+        @include size(50px, 3px);
+        background-color: $bright-sun;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__list {
+    @include display-centering-xy(center, space-between);
+    @media screen and (max-width: 1269px) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    max-width: 313px;
+    min-height: 254px;
+    width: 100%;
+
+    @include display-centering-xy(center, center);
+    flex-direction: column;
+
+    &:last-child {
+      .partners__description {
+        max-width: 295px;
+      }
+    }
+
+    &:nth-child(2) {
+      .partners__description {
+        max-width: 265px;
+      }
+    }
+
+    &:nth-child(3) {
+      .partners__description {
+        max-width: 265px;
+      }
+    }
+  }
+
+  &__logo {
+    @include display-centering-xy(center, center);
+  }
+
+
+  &__name {
+    font: 24px Cardo;
+    line-height: 29px;
+    text-align: center;
+    color: $biscay;
+    margin: 22px 0 0 0;
+  }
+
+
+  &__description {
+    font: 19px Inter;
+    line-height: 29px;
+    text-align: center;
+    color: $manatee;
+    max-width: 290px;
+
+  }
+}

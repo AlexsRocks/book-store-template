@@ -1,0 +1,203 @@
+@import "./color";
+@import "./fonts";
+@import "./mixin";
+
+
+// Header
+.header {
+  background: $biscay;
+  position: fixed;
+  z-index: 5000;
+  width: 100%;
+
+  &__wrapper {
+    @include display-centering-xy(center, space-between);
+    background: $biscay;
+    max-width: 1300px;
+    height: 107px;
+    margin: 1px auto;
+    width: 100%;
+    position: relative;
+  }
+
+
+  #menu__toggle {
+    opacity: 0;
+    right: 40px;
+    position: absolute;
+
+    &:checked ~ .menu__btn > span {
+      transform: rotate(45deg);
+
+      &:before {
+        top: 0;
+        transform: rotate(0);
+      }
+
+      &:after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+    }
+
+    &:checked ~ .menu__box {
+      visibility: visible;
+      left: 0;
+    }
+
+    @media screen and (max-width: 1200px) {
+      &:checked ~ .header__box_right {
+        top: 0;
+      }
+    }
+  }
+
+  .menu__btn {
+    display: none;
+    align-items: center;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 22;
+    @media screen and (max-width: 1200px) {
+      display: flex;
+    }
+
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: $white;
+
+    transition-duration: .25s;
+  }
+
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  &__box_left {
+    @include display-centering-xy(center, space-between);
+    max-width: 309px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    @media screen and (max-width: 1350px) {
+      margin-left: 23px;
+    }
+    @media screen and (max-width: 440px) {
+      margin: 20px 0 23px 23px;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+  }
+
+  &__logo {
+    max-width: 119px;
+    height: 40px;
+    object-fit: cover;
+  }
+
+  &__socials {
+    @include display-centering-xy(center, space-between);
+    width: 155px;
+    padding-bottom: 1px;
+  }
+
+  .social__button {
+    background: $white;
+    text-decoration: none;
+    @include size(45px, 45px);
+    @include display-centering-xy(center, center);
+    @media screen and (max-width: 440px) {
+      @include size(35px, 35px);
+    }
+  }
+
+  &__box_right {
+    @include display-centering-xy(center, flex-end);
+    width: 100%;
+
+    transition: .6s;
+    @media screen and (max-width: 1200px) {
+      @include display-centering-xy(center, flex-end);
+      flex-direction: column;
+      top: -1000px;
+      position: absolute;
+      background: #1B3764;
+      z-index: 20;
+      box-shadow: 0 0 19px rgba(0, 0, 0, 0.18);
+      padding-bottom: 40px;
+    }
+  }
+
+  &__menu {
+    @include display-centering-xy(center, space-between);
+    max-width: 400px;
+    padding-top: 1px;
+    @include size(100%, 70px);
+    @media screen and (max-width: 1200px) {
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .menu__item {
+      letter-spacing: 0.17px;
+      list-style-type: none;
+      text-decoration: none;
+      color: $white-lilac;
+      line-height: 26px;
+      font: 17px Inter;
+      @media screen and (max-width: 1200px) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      &:last-child {
+        margin-left: 15px;
+      }
+
+      &.active {
+        color: $bright-sun;
+      }
+    }
+  }
+
+  .card__button {
+    @include button(45px, 45px);
+    padding-top: 5px;
+    margin: 0 37px 0 27px;
+  }
+
+}
+
+.order__button {
+  @include button(222px, 66px, $bright-sun);
+  padding: 0 5px 3px 0;
+  font: 19px Cardo;
+  line-height: 28px;
+  letter-spacing: 0.57px;
+  transition: .2s;
+
+  &:active {
+    transform: scale(0.9);
+
+  }
+}

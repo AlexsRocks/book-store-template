@@ -1,0 +1,169 @@
+@import "./color";
+@import "./fonts";
+@import "./mixin";
+
+// Intro
+.intro {
+  background-color: $biscay;
+
+  &__wrapper {
+    min-height: 996px;
+    padding: 195px 0 84px 0;
+    @include display-centering-xy(center, space-between);
+    max-width: 1300px;
+    margin: 0 auto;
+    @media screen and (max-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    margin-left: 23px;
+    height: 506px;
+    @media screen and (max-width: 640px) {
+      min-height: 506px;
+      height: auto;
+      margin-right: 23px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .subtitle {
+    font: 21px Cardo;
+    color: $white;
+    margin: 0;
+    line-height: 33px;
+    letter-spacing: 1.2px;
+    @media screen and (max-width: 330px) {
+      font: 18px Cardo;
+    }
+
+    &__line {
+      width: 35px;
+      height: 2px;
+      margin-right: 15px;
+      background: $bright-sun;
+    }
+  }
+
+  &__title {
+    margin: 0 0 25px 0;
+    font: 64px Cardo;
+    color: $white;
+    line-height: 78px;
+    font-weight: 400;
+    @media screen and (max-width: 640px) {
+      font: 30px Cardo;
+    }
+
+    &__part {
+      &-1 {
+        letter-spacing: 1.3px;
+      }
+
+      &-2 {
+        letter-spacing: 0.8px;
+      }
+    }
+  }
+
+  &__text {
+    color: $spindle;
+    font: 18px Inter;
+    line-height: 28px;
+    margin-bottom: 41px;
+  }
+
+  &__button {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 490px) {
+      flex-direction: column;
+    }
+  }
+
+  .info__button {
+    background: none;
+    border: none;
+    font: 19px Cardo;
+    color: $white;
+    border-bottom: 2px solid $white;
+    margin-left: 51px;
+    padding: 0 10px 0 0;
+    line-height: 30px;
+    cursor: pointer;
+    letter-spacing: 0.38px;
+    @media screen and (max-width: 490px) {
+      margin: 40px 0 0 0;
+    }
+  }
+
+  .information {
+
+    @include display-centering-y(center);
+    padding-left: 23px;
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+    }
+
+    &__item {
+      margin-top: 23px;
+      @media screen and (max-width: 640px) {
+        width: 155px;
+      }
+    }
+
+    .pages {
+      margin-right: 84px;
+      @media screen and (max-width: 640px) {
+        margin-right: 0;
+      }
+    }
+
+    .length {
+      margin-right: 93px;
+      @media screen and (max-width: 640px) {
+        margin-right: 0;
+      }
+    }
+
+    &__title {
+      font: 24px Cardo;
+      color: $white;
+      margin: 0 0 0 3px;
+      line-height: 29px;
+      letter-spacing: 0.48px;
+      @media screen and (max-width: 440px) {
+        font: 18px Cardo;
+      }
+    }
+
+    &__info {
+      font: 17px Inter;
+      color: $spindle;
+      margin: 17px 0 0 4px;
+      @media screen and (max-width: 440px) {
+        font: 16px Cardo;
+      }
+    }
+  }
+
+  &__right {
+    margin: 5px 11px 0;
+    max-width: 630px;
+    max-height: 825px;
+
+    .preview-book {
+      width: 100%;
+      height: 100%;
+
+    }
+  }
+}

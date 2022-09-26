@@ -1,0 +1,57 @@
+// Swiper
+.slide-container {
+  width: 100%;
+  padding: 40px 0;
+
+}
+
+.slide-content {
+  margin: 0 35px;
+  padding: 5px 5px;
+  overflow: hidden;
+}
+
+.swiper {
+  &-navBtn {
+    width: 50px;
+    height: 50px;
+    background-color: $bright-sun;
+    border-radius: 50%;
+    color: $biscay;
+    transition: color 0.3s ease;
+    @media screen and (max-width: 400px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover {
+      color: #4070F4;
+    }
+
+    &::after {
+      font-weight: bold;
+      font-size: 35px;
+      @media screen and (max-width: 400px) {
+        font-size: 25px;
+      }
+    }
+
+    &::before {
+      font-weight: bold;
+      font-size: 35px;
+      @media screen and (max-width: 400px) {
+        font-size: 25px;
+      }
+    }
+  }
+
+  &-button-next {
+    margin-top: -26px;
+    right: 15px;
+  }
+
+  &-button-prev {
+    margin-top: -26px;
+    left: 15px;
+  }
+}

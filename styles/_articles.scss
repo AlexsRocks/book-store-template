@@ -1,0 +1,116 @@
+@import "./color";
+@import "./fonts";
+@import "./mixin";
+
+//  Articles
+.articles {
+  background: $zircon;
+  width: 100%;
+
+  &__wrapper {
+    max-width: 1380px;
+    margin: 131px auto 0 auto;
+    padding: 125px 0 105px 0;
+  }
+
+  &__header {
+    margin-bottom: 25px;
+
+    .title {
+      font: 42px Cardo;
+      margin: 0 0 25px 0;
+      text-align: center;
+      line-height: 50px;
+      text-transform: capitalize;
+      color: $biscay;
+
+      &__line {
+        @include size(50px, 3px);
+        background-color: $bright-sun;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .article {
+    &__img {
+      & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__description {
+      box-sizing: border-box;
+      background: $white;
+      min-height: 272px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 10px 0 30px;
+      box-shadow: 0 0 13px rgba(0, 0, 0, 0.07);
+      border-radius: 0 0 5px 5px;
+    }
+
+    &__title {
+      font: 24px Cardo;
+      color: $biscay;
+      line-height: 34px;
+      letter-spacing: 0.24px;
+      margin: 0 70px 21px 0;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @media screen and (max-width: 500px) {
+        font: 18px Cardo;
+      }
+    }
+
+    &__text {
+      font: 19px Inter;
+      color: $manatee;
+      margin: 0 30px 12px 0;
+      line-height: 30px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @media screen and (max-width: 500px) {
+        font: 16px Inter;
+      }
+    }
+
+    &__info {
+      @include display-centering-xy(center, space-between);
+      flex-wrap: wrap;
+    }
+
+    &__link {
+      font: 19px Cardo;
+      color: $biscay;
+      text-decoration: none;
+      line-height: 23px;
+      letter-spacing: 0.38px;
+      text-transform: capitalize;
+      border-bottom: 2px solid $biscay;
+      padding-bottom: 4px;
+      padding-right: 8px;
+      margin-bottom: 28px;
+    }
+
+    &__date {
+      font: 16px Inter;
+      line-height: 26px;
+      color: $biscay;
+      margin-right: 27px;
+      padding-bottom: 28px;
+    }
+  }
+}

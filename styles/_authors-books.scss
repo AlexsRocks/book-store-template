@@ -1,0 +1,127 @@
+@import "./color";
+@import "./fonts";
+@import "./mixin";
+
+// Authors Books
+.authors-books {
+  &__wrapper {
+    @include display-centering-y(center);
+    flex-direction: column;
+    max-width: 1300px;
+    margin: 126px auto 110px auto;
+    min-height: 528px;
+  }
+
+  &__header {
+    margin-bottom: 71px;
+
+    .title {
+      font: 42px Cardo;
+      line-height: 50px;
+      margin: 0 0 24px 0;
+      text-align: center;
+
+      &__line {
+        @include size(50px, 2px);
+        background-color: $bright-sun;
+        margin: 0 auto;
+      }
+
+
+    }
+
+  }
+
+  &__preview {
+    @include display-centering-xy(center, space-between);
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1278px;
+    @media screen and (max-width: 1350px) {
+      flex-direction: column;
+    }
+  }
+
+  &__book {
+    @include display-centering-xy(center, center);
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+    }
+
+    .book {
+      &__info {
+        margin-left: 19px;
+        @include size(324px, 382px);
+        padding-left: 10px;
+
+        @media screen and (max-width: 640px) {
+          @include size(280px, auto);
+        }
+      }
+
+      &__img {
+        @include display-centering-x(center);
+        max-width: 285px;
+        filter: drop-shadow(0px 0px 11px rgba(0, 0, 0, 0.2));
+
+        & img {
+          width: 100%;
+        }
+      }
+
+      &__title {
+        font: 32px Cardo;
+        line-height: 38px;
+        letter-spacing: 0.32px;
+        margin: 38px 0 8px 0;
+      }
+
+      &__prise {
+        font: 21px Inter;
+        line-height: 33px;
+        color: $bright-sun;
+      }
+
+      &__text {
+        font: 19px Inter;
+        line-height: 28px;
+        color: $manatee;
+        margin: 19px 0 13px 0;
+      }
+
+      &__status {
+        @include display-centering-xy(center, flex-start);
+        margin-bottom: 27px;
+
+        .rectangle {
+          background-color: $bright-sun;
+          border-radius: 100px;
+          @include size(16px, 16px)
+        }
+
+        .status {
+          font: 24px Cardo;
+          line-height: 29px;
+          color: $biscay;
+          margin: 0 0 0 10px;
+        }
+
+      }
+
+      &__button {
+        font: 19px Cardo;
+        line-height: 28px;
+        letter-spacing: 0.38px;
+        color: $biscay;
+        padding-left: 3px;
+        @include button(206px, 66px, none, 2px solid $bright-sun);
+        transition: .2s;
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+}
